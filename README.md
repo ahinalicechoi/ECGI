@@ -27,6 +27,10 @@
 ### Frameworks
 
 Web Framework: Python Flask
+```python
+import markdown
+from flask import *
+```
 
 API & database: Go
 
@@ -45,6 +49,7 @@ import (
 	"github.com/gorilla/mux"
 )
 ```
+Hashing algorithm and other security measures currently undecided
 
 Database: Local SQLite3 database
 
@@ -52,4 +57,4 @@ Database: Local SQLite3 database
 
 Markdown for FAQ
 
-Use https://github.com/jekyll/jekyll to build static pages
+Use [jekyll](https://github.com/jekyll/jekyll) to build static pages

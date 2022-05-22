@@ -1,4 +1,6 @@
 # Web development
+Development notes:
+- Will be migrated to Github Organization after completion. It is only in my personal account for convenience.
 
 ## Deadlines
 

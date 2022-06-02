@@ -29,28 +29,9 @@ Development notes:
 ### Frameworks
 
 Web Framework: Python Flask
-```python
-import markdown
-from flask import *
-```
 
 API & database: Go
 
-```go
-// Native
-import (
-	"encoding/json"
-	"fmt"
-	"io/ioutil"
-	"log"
-	"net/http"
-)
-
-// Third party
-import (
-	"github.com/gorilla/mux"
-)
-```
 Hashing algorithm and other security measures currently undecided
 
 Database: Local SQLite3 database

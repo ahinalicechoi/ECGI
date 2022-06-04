@@ -1,17 +1,18 @@
 package config
 
 // Configurations for database
-type userDB struct {
+type Superdb struct{
 	Path   string
 	Schema string
 }
+type userDB struct {
+	Superdb
+}
 type submissionDB struct {
-	Path string
-  Schema string
+	Superdb
 }
 type adminDB struct {
-	Path string
-  Schema string
+	Superdb
   RootUser string
   RootPassword string
 }

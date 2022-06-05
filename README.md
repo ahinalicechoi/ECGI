@@ -12,13 +12,13 @@ Development notes:
 
 - [ ]  Create flask web page handlers
     - [ ]  Homepage
-        - [ ]  Basic info
-        - [ ]  Deadlines
+        - [x]  Basic info
+        - [x]  Deadlines
     - [ ]  Essay questions & submissions portal
     - [ ]  FAQ
-        - [ ]  Terms and conditions
-        - [ ]  Participation requirement
-        - [ ]  Competition details
+        - [x]  Terms and conditions
+        - [x]  Participation requirement
+        - [x]  Competition details
         - [ ]  Judging Criteria
 - [ ]  Create Go API handlers
     - [ ]  Submissions portal

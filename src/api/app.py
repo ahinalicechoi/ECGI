@@ -8,7 +8,7 @@ import os
 import sqlite3
 
 # Flask configurations
-app = Flask(__name__)
+app = flask.Flask(__name__)
 app.config['SECRET_KEY'] = 'c40a650584b50cb7d928f44d58dcaffc'
 
 # My configurations
@@ -57,7 +57,7 @@ def submit_to_db(author, title, abstract, pdf):
         return False
 
 # API handlers (POST)
-@app.route('/submit', methods=('POST'))
+@app.route('/submit', methods=('POST',))
 def submit_handler():
     author = flask.request.form['author']
     title = flask.request.form['title']
@@ -65,3 +65,7 @@ def submit_handler():
     pdf = flask.request.files['pdf']
     submit_to_db(author, title, abstract, pdf)
     return flask.redirect('/ty.html')
+
+#Run app
+if __name__=="__main__":
+    app.run(debug=True, port=8000, host="127.0.0.1")

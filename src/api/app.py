@@ -57,7 +57,7 @@ def submit_to_db(author, title, abstract, pdf):
         return False
 
 # API handlers (POST)
-@app.route('/submit', methods=('POST',))
+@app.route('/api/submit', methods=('POST',))
 def submit_handler():
     author = flask.request.form['author']
     title = flask.request.form['title']

@@ -10,27 +10,27 @@ Development notes:
 
 ## Task list
 
-- [ ]  Create flask web page handlers
-    - [ ]  Homepage
+- [x]  Create flask web page handlers
+    - [x]  Homepage
         - [x]  Basic info
         - [x]  Deadlines
-    - [ ]  Essay questions & submissions portal
+    - [x]  Essay questions & submissions portal
     - [ ]  FAQ
         - [x]  Terms and conditions
         - [x]  Participation requirement
         - [x]  Competition details
         - [ ]  Judging Criteria
-- [ ]  Create Go API handlers
-    - [ ]  Submissions portal
-- [ ]  Write HTML, CSS, and JavaScript
+- [x]  Create flask API handlers
+    - [x]  Submissions portal
+- [x]  Write HTML, CSS, and JavaScript
 
 ## Basic plan
 
 ### Frameworks
 
-Web Framework: Python Flask
+Web Framework: Nginx
 
-API & database: Go
+API & database: Also Flask
 
 Hashing algorithm and other security measures currently undecided
 

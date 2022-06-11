@@ -700,6 +700,24 @@ a {
     text-align: center;
   }
 }
+.cid-s48MCQYojq2 {
+  background-image: url("../../../assets/images/background11.jpg");
+}
+.cid-s48MCQYojq2 .mbr-section-title {
+  text-align: center;
+}
+.cid-s48MCQYojq2 .mbr-text,
+.cid-s48MCQYojq2 .mbr-section-btn {
+  color: #232323;
+  text-align: center;
+}
+@media (max-width: 991px) {
+  .cid-s48MCQYojq2 .mbr-section-title,
+  .cid-s48MCQYojq2 .mbr-section-btn,
+  .cid-s48MCQYojq2 .mbr-text {
+    text-align: center;
+  }
+}
 .cid-s48udlf8KU {
   padding-top: 5rem;
   padding-bottom: 2rem;

@@ -42,7 +42,7 @@ def getMD5(plaintext):
 def submit_to_db(author, title, abstract, pdf):
     try:
         # Generate filename
-        pdf_filepath = 'static/uploads/submissions' + author + '_' + title + '_' + str(randint(1000, 9999)) + '.pdf'
+        pdf_filepath = 'static/uploads/submissions/' + author + '_' + title + '_' + str(randint(1000, 9999)) + '.pdf'
         # Save file
         pdf.save(pdf_filepath)
         # Add to database

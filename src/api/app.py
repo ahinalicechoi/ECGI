@@ -25,14 +25,13 @@ CREATE TABLE IF NOT EXISTS submissions (
 db_path = 'Data/submissions.db'
 
 # Initiate Database if not exists
-def __init__():
-    if os.path.isfile(db_path):
-        pass
-    else:
-        connection = sqlite3.connect(db_path)
-        connection.executescript(schema)
-        connection.commit()
-        connection.close()
+if os.path.isfile(db_path):
+    pass
+else:
+    connection = sqlite3.connect(db_path)
+    connection.executescript(schema)
+    connection.commit()
+    connection.close()
 
 # Back end handlers
 def getMD5(plaintext):

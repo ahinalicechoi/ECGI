@@ -12,10 +12,11 @@ app = flask.Flask(__name__)
 app.config['SECRET_KEY'] = 'c40a650584b50cb7d928f44d58dcaffc'
 
 # My configurations
-submission_schema = '''
+schema = '''
 CREATE TABLE IF NOT EXISTS submissions (
     id INTEGER UNIQUE NOT NULL PRIMARY KEY AUTOINCREMENT,
-    author INTEGER NOT NULL,
+    author TEXT NOT NULL,
+    email TEXT NOT NULL,
     title TEXT NOT NULL,
     abstract TEXT NOT NULL,
     path TEXT NOT NULL
@@ -29,7 +30,7 @@ def __init__():
         pass
     else:
         connection = sqlite3.connect(db_path)
-        connection.executescript(submission_schema)
+        connection.executescript(schema)
         connection.commit()
         connection.close()
 
@@ -39,7 +40,7 @@ def getMD5(plaintext):
     m.update(plaintext.encode('utf-8'))
     hash = str(m.hexdigest())
     return hash
-def submit_to_db(author, title, abstract, pdf):
+def submit_to_db(author, email, title, abstract, pdf):
     try:
         # Generate filename
         pdf_filepath = 'static/uploads/submissions/' + author + '_' + title + '_' + str(randint(1000, 9999)) + '.pdf'
@@ -48,7 +49,7 @@ def submit_to_db(author, title, abstract, pdf):
         # Add to database
         conn = sqlite3.connect(db_path)
         cur = conn.cursor()
-        cur.execute('INSERT INTO submissions (author, title, abstract, path) VALUES (?,?,?,?)',
+        cur.execute('INSERT INTO submissions (author, email, title, abstract, path) VALUES (?,?,?,?)',
         (author, title, abstract, pdf_filepath))
         conn.commit()
         conn.close()
@@ -60,10 +61,18 @@ def submit_to_db(author, title, abstract, pdf):
 @app.route('/api/submit', methods=('POST',))
 def submit_handler():
     author = flask.request.form['author']
+    email = flask.request.form['email']
     title = flask.request.form['title']
     abstract = flask.request.form['abstract']
     pdf = flask.request.files['pdf']
     submit_to_db(author, title, abstract, pdf)
+    return flask.redirect('/ty.html')
+
+@app.route('/api/subscribe', methods=('POST',))
+def subscribe_handler():
+    email = flask.request.form['email']
+    email_list_path = 'Data/subscriptions.txt'
+    open(email_list_path, 'a').write(email)
     return flask.redirect('/ty.html')
 
 #Run app

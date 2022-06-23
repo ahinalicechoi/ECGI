@@ -59,6 +59,15 @@ def submit_to_db(author, email, title, abstract, pdf):
 # API handlers (POST)
 @app.route('/api/submit', methods=('POST',))
 def submit_handler():
+    # Initiate Database if not exists
+    if os.path.isfile(db_path):
+        pass
+    else:
+        connection = sqlite3.connect(db_path)
+        connection.executescript(schema)
+        connection.commit()
+        connection.close()
+    # Get forms
     author = flask.request.form['author']
     email = flask.request.form['email']
     title = flask.request.form['title']
@@ -71,6 +80,12 @@ def submit_handler():
 def subscribe_handler():
     email = flask.request.form['email']
     email_list_path = 'Data/subscriptions.txt'
+    # Just in case deleted by accident
+    if os.path.isfile(email_list_path):
+        pass
+    else:
+        open(email_list_path 'w').write('')
+    # Put info
     open(email_list_path, 'a').write(email)
     return flask.redirect('/ty.html')
 

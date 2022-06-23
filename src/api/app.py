@@ -52,7 +52,7 @@ def submit_to_db(author, email, title, abstract, pdf):
     # Add to database
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
-    cur.execute('INSERT INTO submissions (author, email, title, abstract, path) VALUES (?,?,?,?)',
+    cur.execute('INSERT INTO submissions (author, email, title, abstract, path) VALUES (?,?,?,?,?)',
                 (author, title, abstract, pdf_filepath))
     conn.commit()
     conn.close()

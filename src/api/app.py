@@ -73,7 +73,7 @@ def submit_handler():
     title = flask.request.form['title']
     abstract = flask.request.form['abstract']
     pdf = flask.request.files['pdf']
-    submit_to_db(author, title, abstract, pdf)
+    submit_to_db(author, email, title, abstract, pdf)
     return flask.redirect('/ty.html')
 
 @app.route('/api/subscribe', methods=('POST',))

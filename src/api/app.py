@@ -84,7 +84,7 @@ def subscribe_handler():
     if os.path.isfile(email_list_path):
         pass
     else:
-        open(email_list_path 'w').write('')
+        open(email_list_path, 'w').write('')
     # Put info
     open(email_list_path, 'a').write(email)
     return flask.redirect('/ty.html')

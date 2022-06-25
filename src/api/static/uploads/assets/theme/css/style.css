@@ -959,3 +959,43 @@ blockquote {
 	top: 0;
 	left: -2400px;
 }
+.fade-text {
+    opacity: 0;
+    transform: translateY(25%);
+    transition: opacity 2000ms ease, transform 2000ms ease;
+}
+.fade-text.onscreen {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fade-custom {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1000ms ease-in, transform 1500ms ease;
+}
+.fade-custom.onscreen {
+    opacity: 1;
+    transform: translateY(0);
+}
+.fade-img {
+    opacity: 0;
+    transition: opacity 1000ms ease;
+}
+.fade-img.onscreen {
+    opacity: 1;
+    animation: test-zoom 1750ms ease;
+}
+@keyframes test-zoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.75);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.0)
+    }
+}

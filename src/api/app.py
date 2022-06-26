@@ -5,7 +5,10 @@ import hashlib
 from random import randint
 import json
 import os
+import sys
 import sqlite3
+from smtplib import SMTP_SSL as SMTP
+from email.mime.text import MIMEText
 
 # Flask configurations
 app = flask.Flask(__name__)
@@ -56,10 +59,46 @@ def submit_to_db(author, email, title, abstract, pdf):
                 (author, email, title, abstract, pdf_filepath))
     conn.commit()
     conn.close()
+    return pdf_filepath
+
+def notify_email(name, address, link):
+    SMTPserver = 'us2.smtp.mailhostbox.com'
+    sender = 'no-reply.ecgi@duti.tech'
+    destination = [address, 'youthgenerations2022@gmail.com']
+
+    username = 'no-reply.ecgi@duti.tech'
+    password = 'CYLyeLtq7'
+
+    text_subtype = 'plain'
+
+    content = """
+    Hello """ + name + """,\n
+
+    We have received your submission. The upload is accessible at: 
+    """ + str(link) + """\n
+    Sincerely,
+    Youth Generations Bot
+    """
+
+    subject = 'Your ECGI entry'
+
+    try:
+        msg = MIMEText(content, text_subtype)
+        msg['Subject'] = subject
+        msg['From'] = sender
+
+        conn = SMTP(SMTPserver)
+        conn.set_debuglevel(True)
+        conn.login(username, password)
+        try:
+            conn.sendmail(sender, destination, msg)
+        finally:
+            conn.quit()
+    except:
+        sys.exit("Mail failed")
+
 
 # API handlers (POST)
-
-
 @app.route('/api/submit', methods=('POST',))
 def submit_handler():
     # Initiate Database if not exists
@@ -76,7 +115,9 @@ def submit_handler():
     title = flask.request.form['title']
     abstract = flask.request.form['abstract']
     pdf = flask.request.files['pdf']
-    submit_to_db(author, email, title, abstract, pdf)
+    # Proc
+    pdf_filepath = 'https://youthgenerations.org/' + str(submit_to_db(author, email, title, abstract, pdf))
+    notify_email(author, email, pdf_filepath)
     return flask.redirect('/ty.html')
 
 

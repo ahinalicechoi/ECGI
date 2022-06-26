@@ -116,8 +116,7 @@ def submit_handler():
     abstract = flask.request.form['abstract']
     pdf = flask.request.files['pdf']
     # Proc
-    pdf_filepath = 'https://youthgenerations.org/' + str(submit_to_db(author, email, title, abstract, pdf))
-    notify_email(author, email, pdf_filepath)
+    pdf_filepath = submit_to_db(author, email, title, abstract, pdf)
     return flask.redirect('/ty.html')
 
 

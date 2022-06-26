@@ -62,14 +62,17 @@ def submit_to_db(author, email, title, abstract, pdf):
     return pdf_filepath
 
 def notify_email(name, address, link):
+    # Email testing
     SMTPserver = 'us2.smtp.mailhostbox.com'
     sender = 'no-reply.ecgi@duti.tech'
-    destination = [address, 'youthgenerations2022@gmail.com']
+    destinations = [address, 'youthgenerations2022@gmail.com', 'ecgi@youthgenerations']
 
     username = 'no-reply.ecgi@duti.tech'
-    password = 'CYLyeLtq7'
+    password = 'B)FYY#u9'
 
     text_subtype = 'plain'
+
+    subject = 'Your ECGI entry'
 
     content = """
     Hello """ + name + """,\n
@@ -80,22 +83,21 @@ def notify_email(name, address, link):
     Youth Generations Bot
     """
 
-    subject = 'Your ECGI entry'
-
     try:
-        msg = MIMEText(content, text_subtype)
-        msg['Subject'] = subject
+        msg = MIMEText(content, text_subtype, 'utf-8')
+        msg['Subject'] = Header(subject, 'utf-8')
         msg['From'] = sender
-
-        conn = SMTP(SMTPserver)
-        conn.set_debuglevel(True)
+        msg['To'] = ', '.join(destinations)
+        conn = SMTP(SMTPserver, port='587')
+        conn.set_debuglevel(False)
         conn.login(username, password)
         try:
-            conn.sendmail(sender, destination, msg)
-        finally:
+            conn.sendmail(msg['From'], destinations, msg.as_string())
             conn.quit()
+        except:
+            sys.exit("Sending failed")
     except:
-        sys.exit("Mail failed")
+        sys.exit("Connection failed")
 
 
 # API handlers (POST)

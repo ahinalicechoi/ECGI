@@ -683,9 +683,8 @@ a {
   transition: color 0.6s;
 }
 .cid-s48MCQYojq {
-	background: url("../../../assets/images/background7.jpg") no-repeat center center fixed;
+	background: url("../../../assets/images/background7.jpg") fixed;
 	position: relative;
-	background-size: cover;
 }
 .cid-s48MCQYojq .mbr-section-title {
   text-align: center;
@@ -703,9 +702,8 @@ a {
   }
 }
 .cid-s48MCQYojq2 {
-  background: url("../../../assets/images/background11.jpg") no-repeat center center fixed;
+  background: url("../../../assets/images/background11.jpg") center fixed;
   position: relative;
-  background-size: cover;
 }
 .cid-s48MCQYojq2 .mbr-section-title {
   text-align: center;

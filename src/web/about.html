@@ -62,7 +62,21 @@
 			@media only screen and (hover: none) and (pointer: coarse) and (orientation: portrait){
 				.cherry-background{
 					background: url("assets/images/background11.jpg");
-					-webkit-background-size: auto 30%;
+					background-size: auto 30%;
+					background-attachment: scroll;
+				}
+				.mobile-menu {
+					display: inline-block;
+					position: relative;
+				}
+				.mobile-menu:hover .mobile-menu-content{
+					display: block;
+				}
+			}
+			@media only screen and (hover: none) and (pointer: coarse) and (orientation: landscape) {
+				.cherry-background {
+					background: url("assets/images/background11.jpg");
+					background-size: auto;
 					background-attachment: scroll;
 				}
 				.mobile-menu {

@@ -3,10 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, minimum-scale=1"
-		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" href="assets/images/favicon.png" type="image/png" />
 		<meta name="description" content="" />
 
@@ -45,8 +42,16 @@
 		/>
 		<style>
 			.cherry-background {
-				background: url("assets/images/background7.jpg") center fixed;
+				background: url("assets/images/background7.jpg") no-repeat center fixed;
 				position: relative;
+				background-size: cover;
+			}
+			@media only screen and (hover: none) and (pointer: coarse){
+				.cherry-background{
+					background: url("assets/images/background7.jpg");
+					-webkit-background-size: auto 30%;
+					background-attachment: scroll;
+				}
 			}
 		</style>
 	</head>
@@ -114,43 +119,40 @@
 				</div>
 			</nav>
 		</section>
-		<section
-			data-bs-version="5.1"
-			class="header1 cid-s48MCQYojq mbr-fullscreen mbr-parallax-background"
-		>
-			<div class="align-center container">
-				<div class="row justify-content-center">
-					<div class="col-12 col-lg-8">
-						<h1
-							class="mbr-section-title mbr-fonts-style mb-3 display-1 fade-custom"
-							style="color: white"
-						>
-							<p>
-								<strong>Essay Competition on Global Issues</strong>
-							</p>
-						</h1>
-
-						<p
-							class="mbr-text mbr-fonts-style display-7 fade-text"
-							style="color: white"
-						>
-							Write on issues of <strong>Global Significance</strong>
-						</p>
-						<div class="mbr-section-btn mt-3 fade-text">
-							<a class="btn btn-success display-4" href="#">Start writing</a>
-							<a
-								class="btn btn-success-outline display-4"
-								href="submit_essay.html"
+		<div class="cherry-background">
+			<section data-bs-version="5.1" class="header1 mbr-fullscreen">
+				<div class="align-center container">
+					<div class="row justify-content-center">
+						<div class="col-12 col-lg-8">
+							<h1
+								class="mbr-section-title mbr-fonts-style mb-3 display-1 fade-custom"
 								style="color: white"
-								>Submit your work &gt;</a
 							>
+								<p>
+									<strong>Essay Competition on Global Issues</strong>
+								</p>
+							</h1>
+
+							<p
+								class="mbr-text mbr-fonts-style display-7 fade-text"
+								style="color: white"
+							>
+								Write on issues of <strong>Global Significance</strong>
+							</p>
+							<div class="mbr-section-btn mt-3 fade-text">
+								<a class="btn btn-success display-4" href="#">Start writing</a>
+								<a
+									class="btn btn-success-outline display-4"
+									href="submit_essay.html"
+									style="color: white"
+									>Submit your work &gt;</a
+								>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</section>
-		<br />
-		<div class="cherry-background">
+			</section>
+			<br />
 			<section
 				data-bs-version="5.1"
 				class="content1 cid-s48udlf8KU"

@@ -45,8 +45,16 @@
 
 		<style>
 			.cherry-background {
-				background: url("assets/images/background11.jpg") fixed;
+				background: url("assets/images/background11.jpg") no-repeat center fixed;
 				position: relative;
+				background-size: cover;
+			}
+			@media only screen and (hover: none) and (pointer: coarse){
+				.cherry-background{
+					background: url("assets/images/background11.jpg");
+					-webkit-background-size: auto 30%;
+					background-attachment: scroll;
+				}
 			}
 		</style>
 	</head>
@@ -115,7 +123,7 @@
 		<div class="cherry-background">
 			<section
 				data-bs-version="5.1"
-				class="header1 cid-s48MCQYojq2 mbr-fullscreen mbr-parallax-background"
+				class="header1 mbr-fullscreen"
 				id="header1-f"
 			>
 				<div
@@ -152,7 +160,7 @@
 				data-bs-version="5.1"
 				class="team1 cid-t7QWvW9xuU"
 				id="team1-u"
-				style="margin: 5rem; margin-bottom: 10rem"
+				style="margin-bottom: 10rem"
 			>
 				<div class="container fade-text">
 					<div class="row justify-content-center">

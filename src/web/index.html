@@ -46,11 +46,28 @@
 				position: relative;
 				background-size: cover;
 			}
-			@media only screen and (hover: none) and (pointer: coarse){
-				.cherry-background{
+			.mobile-menu {
+				display: none;
+			}
+			.mobile-menu-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 100px;
+				z-index: 1;
+			}
+			@media only screen and (hover: none) and (pointer: coarse) and (orientation: portrait) {
+				.cherry-background {
 					background: url("assets/images/background7.jpg");
 					-webkit-background-size: auto 30%;
 					background-attachment: scroll;
+				}
+				.mobile-menu {
+					display: inline-block;
+					position: relative;
+				}
+				.mobile-menu:hover .mobile-menu-content{
+					display: block;
 				}
 			}
 		</style>
@@ -76,24 +93,6 @@
 							</a>
 						</span>
 					</div>
-					<button
-						class="navbar-toggler"
-						type="button"
-						data-toggle="collapse"
-						data-bs-toggle="collapse"
-						data-target="#navbarSupportedContent"
-						data-bs-target="#navbarSupportedContent"
-						aria-controls="navbarNavAltMarkup"
-						aria-expanded="false"
-						aria-label="Toggle navigation"
-					>
-						<div class="hamburger">
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul
 							class="navbar-nav nav-dropdown nav-right"
@@ -115,6 +114,31 @@
 								>
 							</li>
 						</ul>
+					</div>
+					<div class="mobile-menu">
+						<button type="button btn-primary">Menu</button>
+						<div class="mobile-menu-content">
+							<ul
+							class="navbar-nav nav-dropdown nav-right"
+							data-app-modern-menu="true"
+							id="navbarSupportedContent"
+						>
+							<li class="nav-item">
+								<a
+									class="nav-link link text-black text-primary display-4"
+									href="about.html"
+									>About Us</a
+								>
+							</li>
+							<li class="nav-item">
+								<a
+									class="nav-link link text-black text-primary display-4"
+									href="submit_essay.html"
+									>Submit Essay</a
+								>
+							</li>
+						</ul>
+						</div>
 					</div>
 				</div>
 			</nav>

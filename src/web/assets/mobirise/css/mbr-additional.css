@@ -683,7 +683,9 @@ a {
   transition: color 0.6s;
 }
 .cid-s48MCQYojq {
-  background-image: url("../../../assets/images/background7.jpg");
+	background: url("../../../assets/images/background7.jpg") no-repeat center center fixed;
+	position: relative;
+	background-size: cover;
 }
 .cid-s48MCQYojq .mbr-section-title {
   text-align: center;

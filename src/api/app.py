@@ -66,7 +66,7 @@ def notify_email(title, abstract, name, address, link):
     # Email testing
     SMTPserver = 'us2.smtp.mailhostbox.com'
     sender = 'no-reply.ecgi@duti.tech'
-    destinations = [address, 'youthgenerations2022@gmail.com', 'ecgi@youthgenerations']
+    destinations = [address, 'youthgenerations2022@gmail.com', 'ecgi@youthgenerations', 'acheong@student.dalat.org']
 
     username = 'no-reply.ecgi@duti.tech'
     password = 'B)FYY#u9'

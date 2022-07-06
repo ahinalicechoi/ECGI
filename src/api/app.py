@@ -64,19 +64,19 @@ def submit_to_db(author, email, title, abstract, pdf):
 
 def notify_email(title, abstract, name, address, link):
     # Email testing
-    SMTPserver = 'us2.smtp.mailhostbox.com'
-    sender = 'no-reply.ecgi@duti.tech'
-    destinations = [address, 'youthgenerations2022@gmail.com', 'ecgi@youthgenerations', 'acheong@student.dalat.org']
+    SMTPserver = 'CHANGEME'
+    sender = 'CHANGEME'
+    destinations = [address, 'CHANGEME']
 
-    username = 'no-reply.ecgi@duti.tech'
-    password = 'B)FYY#u9'
+    username = 'CHANGEME'
+    password = 'CHANGEME'
 
     text_subtype = 'plain'
 
     subject = 'Your ECGI entry'
 
     content = \
-    "Hello" + name + ",\n" + \
+    "Hello " + name + ",\n" + \
     "We have received your submission. The upload is accessible at: " + str(link) + \
     "\n\nTitle: " + title + \
     "\nAbstract: \n" + abstract + \

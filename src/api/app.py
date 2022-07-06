@@ -62,7 +62,7 @@ def submit_to_db(author, email, title, abstract, pdf):
     conn.close()
     return pdf_filepath
 
-def notify_email(name, address, link):
+def notify_email(title, abstract, name, address, link):
     # Email testing
     SMTPserver = 'us2.smtp.mailhostbox.com'
     sender = 'no-reply.ecgi@duti.tech'
@@ -75,11 +75,12 @@ def notify_email(name, address, link):
 
     subject = 'Your ECGI entry'
 
-    content = """
-    Hello """ + name + """,\n
-
-    We have received your submission. The upload is accessible at: 
-    """ + str(link) + """\n
+    content = \
+    "Hello" + name + ",\n" + \
+    "We have received your submission. The upload is accessible at: " + str(link) + \
+    "\n\nTitle: " + title + \
+    "\nAbstract: \n" + abstract + \
+    """\n\n
     Sincerely,
     Youth Generations Bot
     """
@@ -121,7 +122,7 @@ def submit_handler():
     # Proc
     pdf_filepath = submit_to_db(author, email, title, abstract, pdf)
     full_filepath = 'https://youthgenerations.org/' + pdf_filepath
-    notify_email(author, email, full_filepath)
+    notify_email(title, abstract, author, email, full_filepath)
     return flask.redirect('/ty.html')
 
 

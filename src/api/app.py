@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS submissions (
     email TEXT NOT NULL,
     title TEXT NOT NULL,
     abstract TEXT NOT NULL,
+    category INTEGER NOT NULL,
     path TEXT NOT NULL
   );
 '''
@@ -47,7 +48,7 @@ def getMD5(plaintext):
     return hash
 
 
-def submit_to_db(author, email, title, abstract, pdf):
+def submit_to_db(author, email, title, abstract, category, pdf):
     # Generate filename
     pdf_filepath = 'static/uploads/submissions/' + secure_filename((author + \
         '_' + title + '_' + str(randint(1000, 9999)) + '.pdf'))
@@ -56,8 +57,8 @@ def submit_to_db(author, email, title, abstract, pdf):
     # Add to database
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
-    cur.execute('INSERT INTO submissions (author, email, title, abstract, path) VALUES (?,?,?,?,?)',
-                (author, email, title, abstract, pdf_filepath))
+    cur.execute('INSERT INTO submissions (author, email, title, abstract, category, path) VALUES (?,?,?,?,?,?)',
+                (author, email, title, abstract, int(category), pdf_filepath))
     conn.commit()
     conn.close()
     return pdf_filepath
@@ -118,9 +119,10 @@ def submit_handler():
     email = flask.request.form['email']
     title = flask.request.form['title']
     abstract = flask.request.form['abstract']
+    category = flask.request.form['category']
     pdf = flask.request.files['pdf']
     # Proc
-    pdf_filepath = submit_to_db(author, email, title, abstract, pdf)
+    pdf_filepath = submit_to_db(author, email, title, abstract, category, pdf)
     full_filepath = 'https://youthgenerations.org/' + pdf_filepath
     notify_email(title, abstract, author, email, full_filepath)
     return flask.redirect('/ty.html')

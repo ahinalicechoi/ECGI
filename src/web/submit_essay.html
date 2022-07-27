@@ -1,193 +1,331 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+    <meta name="description" content="" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="icon" href="assets/images/favicon.png" type="image/png">
-  <meta name="description" content="">
+    <title>ECGI | Submissions</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css" />
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap/css/bootstrap-reboot.min.css"
+    />
+    <link rel="stylesheet" href="assets/dropdown/css/style.css" />
+    <link rel="stylesheet" href="assets/socicon/css/styles.css" />
+    <link rel="stylesheet" href="assets/theme/css/style.css" />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"
+      />
+    </noscript>
+    <link
+      rel="preload"
+      as="style"
+      href="assets/mobirise/css/mbr-additional.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/mobirise/css/mbr-additional.css"
+      type="text/css"
+    />
 
-
-  <title>ECGI | Submissions</title>
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Jost:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap">
-  </noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
-  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-
-
-<style>
-  		.mobile-menu {
-				display: none;
-			}
-			.mobile-menu-content {
-				display: none;
-				position: absolute;
-				background-color: #f9f9f9;
-				min-width: 100px;
-				z-index: 1;
-			}
-      @media only screen and (hover: none) and (pointer: coarse) and (orientation: portrait){
-        .mobile-menu {
-					display: inline-block;
-					position: relative;
-				}
-				.mobile-menu:hover .mobile-menu-content{
-					display: block;
-				}
+    <style>
+      .mobile-menu {
+        display: none;
       }
-      
-</style>
+      .mobile-menu-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 100px;
+        z-index: 1;
+      }
+      @media only screen and (hover: none) and (pointer: coarse) and (orientation: portrait) {
+        .mobile-menu {
+          display: inline-block;
+          position: relative;
+        }
+        .mobile-menu:hover .mobile-menu-content {
+          display: block;
+        }
+      }
+    </style>
+  </head>
 
-</head>
-
-<body>
-
-  <section data-bs-version="5.1" class="menu cid-s48OLK6784" once="menu" id="menu1-16">
-
-    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
-      <div class="container">
-        <div class="navbar-brand">
-          <span class="navbar-logo">
-            <a href="index.html">
-              <img src="assets/images/output-220x154.png" style="height: 3.8rem;">
-            </a>
-          </span>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
-            <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="about.html">About Us</a></li>
-            <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="submit_essay.html">Submit Essay</a></li>          </ul>
-
-
-        </div>
-        <div class="mobile-menu">
-          <button type="button btn-primary">Menu</button>
-          <div class="mobile-menu-content">
-            <ul
-            class="navbar-nav nav-dropdown nav-right"
-            data-app-modern-menu="true"
-            id="navbarSupportedContent"
-          >
-            <li class="nav-item">
-              <a
-                class="nav-link link text-black text-primary display-4"
-                href="about.html"
-                >About Us</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link link text-black text-primary display-4"
-                href="submit_essay.html"
-                >Submit Essay</a
-              >
-            </li>
-          </ul>
+  <body>
+    <section
+      data-bs-version="5.1"
+      class="menu cid-s48OLK6784"
+      once="menu"
+      id="menu1-16"
+    >
+      <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container">
+          <div class="navbar-brand">
+            <span class="navbar-logo">
+              <a href="index.html">
+                <img
+                  src="assets/images/output-220x154.png"
+                  style="height: 3.8rem"
+                />
+              </a>
+            </span>
           </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul
+              class="navbar-nav nav-dropdown nav-right"
+              data-app-modern-menu="true"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black text-primary display-4"
+                  href="about.html"
+                  >About Us</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link link text-black text-primary display-4"
+                  href="submit_essay.html"
+                  >Submit Essay</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="mobile-menu">
+            <button type="button btn-primary">Menu</button>
+            <div class="mobile-menu-content">
+              <ul
+                class="navbar-nav nav-dropdown nav-right"
+                data-app-modern-menu="true"
+                id="navbarSupportedContent"
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-link link text-black text-primary display-4"
+                    href="about.html"
+                    >About Us</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link link text-black text-primary display-4"
+                    href="submit_essay.html"
+                    >Submit Essay</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <br />
+    <br />
+    <br />
+    <section data-bs-version="5.1" class="form7 cid-t8juK9yRv4" id="form7-18">
+      <div class="container">
+        <div class="mbr-section-head">
+          <h3
+            class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"
+          >
+            <strong>Submit Essay</strong>
+          </h3>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <div class="col-lg-8 mx-auto mbr-form">
+            <form
+              action="api/submit"
+              enctype="multipart/form-data"
+              method="POST"
+              data-rcpha_sitekey=""
+              data-rcpha_secretkey=""
+              class="mbr-form form-with-styler mx-auto"
+              id="essayform"
+            >
+              <p class="mbr-text mbr-fonts-style align-center mb-4 display-7">
+                One of our team will be in contact with you shortly.
+              </p>
+              <div class="row">
+                <div
+                  hidden="hidden"
+                  data-form-alert-danger=""
+                  class="alert alert-danger col-12"
+                >
+                  Oops...! some problem!
+                </div>
+              </div>
+              <div class="dragArea row">
+                <div
+                  class="col-lg-12 col-md-12 col-sm-12 form-group mb-3"
+                  data-for="author"
+                >
+                  <input
+                    type="text"
+                    name="author"
+                    placeholder="Author"
+                    data-form-field="author"
+                    class="form-control"
+                    value=""
+                    id="name-form7-18"
+                  />
+                </div>
+                <div
+                  class="col-lg-12 col-md-12 col-sm-12 form-group mb-3"
+                  data-for="email"
+                >
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="example@example.com"
+                    data-form-field="email"
+                    class="form-control"
+                    value=""
+                    id="name-form7-121"
+                  />
+                </div>
+                <div
+                  class="col-lg-12 col-md-12 col-sm-12 form-group mb-3"
+                  data-for="title"
+                >
+                  <input
+                    type="text"
+                    name="title"
+                    placeholder="Title"
+                    data-form-field="title"
+                    class="form-control"
+                    value=""
+                    id="name-form7-19"
+                  />
+                </div>
+                <div
+                  class="col-lg-12 col-md-12 col-sm-12 form-group mb-col-lg-12 col-md-12 col-sm-12 form-group mb-33"
+                  type="textarea"
+                  data-for="abstract"
+                >
+                  <textarea
+                    name="abstract"
+                    form="essayform"
+                    rows="5"
+                    placeholder="Abstract"
+                    data-form-field="abstract"
+                    class="form-control"
+                    value=""
+                    id="name-form7-20"
+                  >
+ Write your abstract here </textarea
+                  ><br />
+                </div>
+                <div
+                  class="col-lg-12 col-md-12 col-sm-12 form-group mb-3"
+                  data-for="pdf"
+                >
+                  <label for="name-form7-21"><h5>Upload essay:</h5></label>
+                  <input
+                    type="file"
+                    name="pdf"
+                    data-form-field="pdf"
+                    class="form-control"
+                    value=""
+                    id="name-form7-21"
+                  />
+                </div>
+                <div
+                  class="col-lg-12 col-md-12 col-sm-12 form-group mb-3"
+                  data-for="category"
+                >
+                  <!--A dropdown selection for different year groups with disabled default prompt-->
+                  <select name="category" class="form-control" id="category">
+                    <option value="">Select Category</option>
+                    <option value="1">Year 4-6</option>
+                    <option value="2">Year 7-9</option>
+                    <option value="3">Year 10-13</option>
+                  </select>
+                </div>
+                <div class="col-auto mbr-section-btn align-center">
+                  <button type="submit" class="btn btn-primary display-4">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </nav>
-
-  </section>
-  <br>
-  <br>
-  <br>
-  <section data-bs-version="5.1" class="form7 cid-t8juK9yRv4" id="form7-18">
-
-
-    <div class="container">
-      <div class="mbr-section-head">
-        <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-          <strong>Submit Essay</strong>
-        </h3>
-
-      </div>
+    </section>
+    <br /><br /><br />
+    <section
+      data-bs-version="5.1"
+      class="footer3 cid-s48P1Icc8J"
+      once="footers"
+      id="footer3-17"
+    >
       <div class="row justify-content-center mt-4">
         <div class="col-lg-8 mx-auto mbr-form">
-          <form action="api/submit" enctype="multipart/form-data" method="POST" data-rcpha_sitekey="" data-rcpha_secretkey="" class="mbr-form form-with-styler mx-auto" id="essayform">
-            <p class="mbr-text mbr-fonts-style align-center mb-4 display-7">
-              One of our team will be in contact with you shortly.
+          <div class="container">
+            <form
+              class="mbr-form form-with-styler mx-auto"
+              action="/api/subscribe"
+              method="post"
+            >
+              <label for="subscribe_form" style="color: white">
+                <h5>Subscribe for updates:</h5>
+              </label>
+              <br />
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                id="subscribe_form"
+                placeholder="example@example.com"
+              />
+              <br />
+              <button type="submit" class="btn btn-primary display-4">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <div class="container">
+        <div class="media-container-row align-center mbr-white">
+          <div class="row row-links">
+            <ul class="foot-menu">
+              <li class="foot-menu-item mbr-fonts-style display-7">FAQ</li>
+              <li class="foot-menu-item mbr-fonts-style display-7">
+                <a href="privacy.html" class="text-primary">Privacy Policy</a>
+              </li>
+              <li class="foot-menu-item mbr-fonts-style display-7">
+                <a href="about.html" class="text-primary">About Us</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="row row-copirayt">
+            <p
+              class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7"
+            >
+              ©ECGI All rights reserved.
             </p>
-            <div class="row">
-
-              <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
-                Oops...! some problem!
-              </div>
-            </div>
-            <div class="dragArea row">
-              <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="author">
-                <input type="text" name="author" placeholder="Author" data-form-field="author" class="form-control" value="" id="name-form7-18">
-              </div>
-              <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="email">
-                <input type="email" name="email" placeholder="example@example.com" data-form-field="email" class="form-control" value="" id="name-form7-121">
-              </div>
-              <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="title">
-                <input type="text" name="title" placeholder="Title" data-form-field="title" class="form-control" value="" id="name-form7-19">
-              </div>
-              <div class="col-lg-12 col-md-12 col-sm- type="textarea"12 form-group mb-col-lg-12 col-md-12 col-sm-12 form-group mb-33" data-for="abstract">
-                <textarea name="abstract" form="essayform" rows="5" placeholder="Abstract" data-form-field="abstract" class="form-control" value="" id="name-form7-20"> Write your abstract here </textarea><br>
-              </div>
-              <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="pdf">
-                <label for="name-form7-21"><h5>Upload essay:</h5></label>
-                <input type="file" name="pdf" data-form-field="pdf" class="form-control" value="" id="name-form7-21">
-              </div>
-              <div class="col-auto mbr-section-btn align-center">
-                <button type="submit" class="btn btn-primary display-4">Submit</button>
-              </div>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-<br><br><br>
-  <section data-bs-version="5.1" class="footer3 cid-s48P1Icc8J" once="footers" id="footer3-17">
-
-    <div class="row justify-content-center mt-4">
-      <div class="col-lg-8 mx-auto mbr-form">
-        <div class="container">
-          <form class="mbr-form form-with-styler mx-auto" action="/api/subscribe" method="post">
-            <label for="subscribe_form" style="color:white;">
-              <h5>Subscribe for updates:</h5>
-            </label> <br>
-            <input type="email" name="email" class="form-control" id="subscribe_form" placeholder="example@example.com">
-            <br>
-            <button type="submit" class="btn btn-primary display-4">Submit</button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <br>
-
-
-    <div class="container">
-      <div class="media-container-row align-center mbr-white">
-        <div class="row row-links">
-          <ul class="foot-menu">
-
-
-
-
-
-            <li class="foot-menu-item mbr-fonts-style display-7">FAQ</li>
-            <li class="foot-menu-item mbr-fonts-style display-7"><a href="privacy.html" class="text-primary">Privacy Policy</a></li>
-            <li class="foot-menu-item mbr-fonts-style display-7"><a href="about.html" class="text-primary">About Us</a></li>
-          </ul>
-        </div>
-
-        <div class="row row-copirayt">
-          <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-7">©ECGI All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-</body>
-
+    </section>
+  </body>
 </html>

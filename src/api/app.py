@@ -76,14 +76,14 @@ def notify_email(title, abstract, name, address, category, link):
         category = "Year 10-13"
     else:
         category = "Invalid"
+
     # Email testing
     SMTPserver = 'smtp.gmail.com'
     sender = 'ecgi@youthgenerations.org'
-    destinations = [address, 'acheong@student.dalat.org']
+    destinations = [address, 'youthgenerations2022@gmail.com', 'ecgi@youthgenerations.org', 'acheong@student.dalat.org']
 
     username = 'youthgenerations.dev@gmail.com'
     password = 'HIDDEN'
-
     text_subtype = 'plain'
 
     subject = 'Your ECGI entry'

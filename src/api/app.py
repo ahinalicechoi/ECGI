@@ -63,7 +63,16 @@ def submit_to_db(author, email, title, abstract, category, pdf):
     conn.close()
     return pdf_filepath
 
-def notify_email(title, abstract, name, address, link):
+def notify_email(title, abstract, name, address, category, link):
+    # Convert category from int to string
+    if category == 1:
+        category = "Year 4-6"
+    elif category == 2:
+        category = "Year 7-9"
+    elif category == 3:
+        category = "Year 10-13"
+    else:
+        category = "Invalid"
     # Email testing
     SMTPserver = 'CHANGEME'
     sender = 'CHANGEME'
@@ -81,6 +90,7 @@ def notify_email(title, abstract, name, address, link):
     "We have received your submission. The upload is accessible at: " + str(link) + \
     "\n\nTitle: " + title + \
     "\nAbstract: \n" + abstract + \
+    "\n Year group: " + category +\
     """\n\n
     Sincerely,
     Youth Generations Bot
@@ -124,7 +134,7 @@ def submit_handler():
     # Proc
     pdf_filepath = submit_to_db(author, email, title, abstract, category, pdf)
     full_filepath = 'https://youthgenerations.org/' + pdf_filepath
-    notify_email(title, abstract, author, email, full_filepath)
+    notify_email(title, abstract, author, email, category, full_filepath)
     return flask.redirect('/ty.html')
 
 

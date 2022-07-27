@@ -109,7 +109,7 @@ def notify_email(title, abstract, name, address, category, link):
         # with username and password
         s = SMTP(SMTPserver, 587)
         # Set debug true
-        s.set_debug_output(True)
+        s.debuglevel = True
         s.starttls()
         s.login(username, password)
         try:

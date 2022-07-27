@@ -7,9 +7,12 @@ import json
 import os
 import sys
 import sqlite3
+# SMTP stuff
 from smtplib import SMTP
 from email.mime.text import MIMEText
-from email.header    import Header
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
 
 # Flask configurations
 app = flask.Flask(__name__)
@@ -74,12 +77,12 @@ def notify_email(title, abstract, name, address, category, link):
     else:
         category = "Invalid"
     # Email testing
-    SMTPserver = 'CHANGEME'
-    sender = 'CHANGEME'
-    destinations = [address, 'CHANGEME']
+    SMTPserver = 'smtp.gmail.com'
+    sender = 'ecgi@youthgenerations.org'
+    destinations = [address, 'acheong@student.dalat.org']
 
-    username = 'CHANGEME'
-    password = 'CHANGEME'
+    username = 'youthgenerations.dev@gmail.com'
+    password = 'HIDDEN'
 
     text_subtype = 'plain'
 
@@ -97,20 +100,24 @@ def notify_email(title, abstract, name, address, category, link):
     """
 
     try:
-        msg = MIMEText(content, text_subtype, 'utf-8')
-        msg['Subject'] = Header(subject, 'utf-8')
+        # Make a MIMETEXT msg and set Subject, From, To
+        msg = MIMEText(content, text_subtype)
+        msg['Subject'] = subject
         msg['From'] = sender
-        msg['To'] = ', '.join(destinations)
-        conn = SMTP(SMTPserver, port='587')
-        conn.set_debuglevel(False)
-        conn.login(username, password)
+        msg['To'] = ", ".join(destinations)
+        # Make SMTP connection to SMTPserver at port 587 with tls. then login
+        # with username and password
+        s = SMTP(SMTPserver, 587)
+        s.starttls()
+        s.login(username, password)
         try:
-            conn.sendmail(msg['From'], destinations, msg.as_string())
-            conn.quit()
+            # Send the message from the sender to destinations with message
+            s.sendmail(sender, destinations, msg.as_string())
+            print("Mail sent")
         except:
-            sys.exit("Sending failed")
+            print("Sending failed")
     except:
-        sys.exit("Connection failed")
+        print("Connection failed")
 
 
 # API handlers (POST)

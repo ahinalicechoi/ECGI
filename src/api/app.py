@@ -93,7 +93,7 @@ def notify_email(title, abstract, name, address, category, link):
     "We have received your submission. The upload is accessible at: " + str(link) + \
     "\n\nTitle: " + title + \
     "\nAbstract: \n" + abstract + \
-    "\n Year group: " + category +\
+    "\n\nYear group: " + category +\
     """\n\n
     Sincerely,
     Youth Generations Bot
@@ -138,7 +138,7 @@ def submit_handler():
     email = flask.request.form['email']
     title = flask.request.form['title']
     abstract = flask.request.form['abstract']
-    category = flask.request.form['category']
+    category = int(flask.request.form['category'])
     pdf = flask.request.files['pdf']
     # Proc
     pdf_filepath = submit_to_db(author, email, title, abstract, category, pdf)

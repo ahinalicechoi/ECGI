@@ -92,7 +92,7 @@ def notify_email(title, abstract, name, address, category, link):
     "Hello " + name + ",\n" + \
     "We have received your submission. The upload is accessible at: " + str(link) + \
     "\n\nTitle: " + title + \
-    "\nAbstract: \n" + abstract + \
+    "\n\nAbstract: \n" + abstract + \
     "\n\nYear group: " + category +\
     """\n\n
     Sincerely,
@@ -109,7 +109,7 @@ def notify_email(title, abstract, name, address, category, link):
         # with username and password
         s = SMTP(SMTPserver, 587)
         # Set debug true
-        s.debuglevel = True
+        s.debuglevel = False
         s.starttls()
         s.login(username, password)
         try:
